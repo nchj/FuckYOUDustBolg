@@ -25,8 +25,7 @@ jobs:
           distribution: "temurin"
           java-version: "21"
 
-      - name: Run Build Script
-        run: sh scripts/release.sh
+      - run: java Release.java
 
       - name: Commit and push if there are changes
         run: |
