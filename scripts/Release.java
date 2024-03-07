@@ -15,6 +15,7 @@ public class Release {
             try (Stream<Path> paths = Files.walk(Paths.get(directoryPath))) {
                 paths
                         .filter(Files::isRegularFile)
+                        .filter(path -> !path.equals(outputPath))
                         .filter(path -> path.toString().endsWith(".txt"))
                         .forEach(path -> {
                             try (Stream<String> lines = Files.lines(path)) {

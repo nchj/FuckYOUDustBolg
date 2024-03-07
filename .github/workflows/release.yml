@@ -10,7 +10,7 @@ on:
     types: [closed]
 
 jobs:
-  run-java:
+  release:
     if: github.event.pull_request.merged == true || github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
@@ -25,7 +25,8 @@ jobs:
           distribution: "temurin"
           java-version: "21"
 
-      - run: java Release.java
+      - name: Run Build Script
+        run: bash scripts/release.sh
 
       - name: Commit and push if there are changes
         run: |
