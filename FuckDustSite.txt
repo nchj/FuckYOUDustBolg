@@ -1,3 +1,4 @@
 *://*.javascriptcn.com/*
 title/百科网/
 title/知识网/
+*://cloud.tencent.com/developer/information/*
